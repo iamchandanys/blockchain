@@ -16,4 +16,7 @@ export class FooterComponent implements OnInit {
     window.open(`https://www.chandanys.in/`, '_blank');
   }
 
+  onClickSourceCode() {
+    window.open(`https://github.com/iamchandanys/blockchain.demo`, '_blank');
+  }
 }
