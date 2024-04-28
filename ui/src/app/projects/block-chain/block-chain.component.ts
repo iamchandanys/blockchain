@@ -95,7 +95,7 @@ export class BlockChainComponent implements OnInit {
 
   onClickWhitePaper() {
 
-    window.open(environment.blockChainDemoLink);
+    window.open('https://codesnippet.blob.core.windows.net/chandanys-web/blockchaindoc.pdf', '_blank');
 
   }
 }

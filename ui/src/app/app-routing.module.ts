@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './projects/chandanys/home.component'
 import { BlockChainComponent } from './projects/block-chain/block-chain.component';
 import { AddTransactionComponent } from './projects/block-chain/pages/add-transaction/add-transaction.component';
 
@@ -10,20 +9,16 @@ const routes: Routes = [
     component: BlockChainComponent
   },
   {
-    path: "home",
-    component: HomeComponent
-  },
-  {
     path: "sendmoney",
     component: AddTransactionComponent
   },
   {
     path: '',
-    component: HomeComponent
+    component: BlockChainComponent
   },
   {
     path: "**",
-    redirectTo: "home"
+    redirectTo: "blockchain"
   }
 ];
 
