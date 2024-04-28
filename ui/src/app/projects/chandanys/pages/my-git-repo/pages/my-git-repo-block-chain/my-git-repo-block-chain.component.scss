@@ -1,0 +1,24 @@
+.main-div-style {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    
+    .block-chain-cover-pic-style {
+        height: 250px;
+    }
+
+    img {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .view-project-style {
+        height: 100%;
+        position: absolute;
+        top: 44px;
+    }
+}

@@ -1,0 +1,32 @@
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1%;
+}
+
+.custom-card-header {
+    margin-bottom: 0;
+}
+
+.custom-card-footer-css {
+    width: 100%;
+}
+
+.custom-card-footer-textarea {
+    font-size: 10px;
+    height: 90px;
+}
+
+.difficulty-level-warning-text {
+    text-align: justify;
+}
+
+.mined-reward-text-style {
+    text-align: justify;
+    margin-bottom: 0px;
+}
+
+.spinner-style {
+    margin-right: 10px;
+}

@@ -1,0 +1,50 @@
+<form>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="exampleInputFromAddress">From Address</label>
+                <input class="form-control" id="exampleInputFromAddress" name="publicAddress"
+                    aria-describedby="FromAddressHelp" [(ngModel)]="myPublicAddress" disabled>
+                <small id="FromAddressHelp" class="form-text text-muted">Your wallet address</small>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="exampleInputToAddess">To Address *</label>
+                <input class="form-control" id="exampleInputToAddess" name="toAddress" placeholder="Enter To Address"
+                    [(ngModel)]="toAddress" aria-describedby="ToAddressHelp" autocomplete="off">
+                <small id="ToAddressHelp" class="form-text generate-dummy-address-text text-primary"
+                    (click)="generateDummyToAddress()">Click here to generate dummy address</small>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="exampleInputAmount">Amount *</label>
+                <input type="number" class="form-control" id="exampleInputAmount" name="amount"
+                    placeholder="Enter Amount" [(ngModel)]="amountToBeTransferred"
+                    onkeydown="return event.keyCode !== 69">
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="exampleInputNote">Note</label>
+                <input class="form-control" id="exampleInputNote" name="note" placeholder="Enter Note"
+                    [(ngModel)]="note" maxlength="20" autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="sendMoney()">
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z" />
+            </svg>
+        </span>
+        Sign & Send
+    </button>
+</form>

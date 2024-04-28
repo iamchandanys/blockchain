@@ -1,0 +1,122 @@
+<div class="modal fade" id="viewBlockDetailsModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="viewBlockDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewBlockDetailsLabel">Block Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    (click)="onClickCancelTamperedBlock(true)">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <h6 class="text-primary heading-font-size modal-sub-headings">Block:</h6>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="exampleCurrentBlockHash">Current Block Hash</label>
+                        <input id="exampleCurrentBlockHash" class="form-control" autocomplete="off"
+                            name="currentBlockHash" [(ngModel)]="viewedBlock.hash" [disabled]="!isOptedForTamper">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="examplePreviousBlockHash">Previous Block Hash</label>
+                        <input id="examplePreviousBlockHash" class="form-control" autocomplete="off"
+                            name="previousBlockHash" [(ngModel)]="viewedBlock.previousHash"
+                            [disabled]="!isOptedForTamper">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="exampleInputNonce">Nonce</label>
+                        <input id="exampleInputNonce" class="form-control" autocomplete="off" name="blockNonce"
+                            [(ngModel)]="viewedBlock.nonce" [disabled]="!isOptedForTamper">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="exampleInputTimeStamp">Time Stamp</label>
+                        <input id="exampleInputTimeStamp" class="form-control" autocomplete="off" name="blockTimeStamp"
+                            [(ngModel)]="viewedBlock.timeStamp" [disabled]="!isOptedForTamper">
+                    </div>
+                </div>
+
+                <hr />
+
+                <h6 class="text-primary heading-font-size modal-sub-headings">Transaction:</h6>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="exampleInputId">Id</label>
+                        <input id="exampleInputId" class="form-control" autocomplete="off" name="transactionId"
+                            [(ngModel)]="viewedBlock.transaction.id" [disabled]="!isOptedForTamper">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="exampleInputAmount">Amount</label>
+                        <input type="number" id="exampleInputAmount" class="form-control" autocomplete="off"
+                            name="transactionAmount" [(ngModel)]="viewedBlock.transaction.amountTransferred"
+                            [disabled]="!isOptedForTamper">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="exampleInputFromAddress">From Address</label>
+                        <input id="exampleInputFromAddress" class="form-control" autocomplete="off"
+                            name="transactionFromAddress" [(ngModel)]="viewedBlock.transaction.fromAddress"
+                            [disabled]="!isOptedForTamper">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="exampleInputToAddress">To Address</label>
+                        <input id="exampleInputToAddress" class="form-control" autocomplete="off"
+                            name="transactionToAddress" [(ngModel)]="viewedBlock.transaction.toAddress"
+                            [disabled]="!isOptedForTamper">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="exampleInputNote">Note</label>
+                        <input id="exampleInputNote" class="form-control" autocomplete="off" name="transactionNote"
+                            [(ngModel)]="viewedBlock.transaction.note" [disabled]="!isOptedForTamper">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="exampleInputTimeStamp">Time Stamp</label>
+                        <input type="number" id="exampleInputTimeStamp" class="form-control" autocomplete="off"
+                            name="transactionTimeStamp" [(ngModel)]="viewedBlock.transaction.timeStamp"
+                            [disabled]="!isOptedForTamper">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="tamperBlock()" *ngIf="!isOptedForTamper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bug-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A4.985 4.985 0 0 0 3 6h10a4.985 4.985 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A4.978 4.978 0 0 0 8 1a4.979 4.979 0 0 0-2.731.811l-.29-.956z" />
+                        <path
+                            d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5H13zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975z" />
+                    </svg>
+                    Tamper Block
+                </button>
+                <button type="button" class="btn btn-success" (click)="updateTamperredBlock()" *ngIf="isOptedForTamper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                    </svg>
+                    Update Tampered Block
+                </button>
+                <button type="button" class="btn btn-danger" (click)="onClickCancelTamperedBlock()"
+                    *ngIf="isOptedForTamper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                    </svg>
+                    Cancel
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

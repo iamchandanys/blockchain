@@ -1,0 +1,102 @@
+<div class="modal fade" id="mineTransactionModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="mineTransactionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="mineTransactionLabel">Proof of Work</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputToAddess">Difficulty Level *</label>
+                        <input type="number" class="form-control" id="exampleInputDifficultyLevel"
+                            name="difficultyLevel" placeholder="Enter difficulty level" [(ngModel)]="difficultyLevel"
+                            onkeydown="return event.keyCode !== 69">
+                        <small id="FromAddressHelp" class="form-text text-muted difficulty-level-warning-text">
+                            Increasing the difficulty level might slow down or hang the machine. 1 to 3 is highly
+                            recommended for normal laptops or computers.
+                        </small>
+                    </div>
+                </form>
+
+                <hr />
+
+                <!-- The text is set using jQuery -->
+                <p id="minedRewardText" class="sub-text-font-size text-success mined-reward-text-style"></p>
+                <p id="minedRewardTextNote" class="sub-text-font-size text-danger mined-reward-text-style"></p>
+
+                <br />
+
+                <div *ngFor="let pTransaction of blockChain.pendingTransactions">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="custom-card-header ellipsis">
+                                <span class="text-info">{{pTransaction.id}}</span>
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p class='ellipsis text-font-size'>
+                                Amount: <span class="text-muted">{{pTransaction.amountTransferred}}₿</span>
+                            </p>
+                            <p class='ellipsis text-font-size'>
+                                Note: <span class="text-muted">{{pTransaction.note}}</span>
+                            </p>
+                            <p class='ellipsis text-font-size'>
+                                Mine Status: <span class="text-warning">{{pTransaction.mineStatus}}</span>
+                            </p>
+                            <p class='ellipsis text-font-size'>
+                                Time Stamp: <span class="text-muted">{{pTransaction.timeStamp | date:'d/M/yy, h:mm:ss
+                                    a'}}</span>
+                            </p>
+                            <p class='ellipsis text-font-size'>
+                                From Address: <span class="text-muted">{{pTransaction.fromAddress}}</span>
+                            </p>
+                            <p class='ellipsis text-font-size'>
+                                To Address: <span class="text-muted">{{pTransaction.toAddress}}</span>
+                            </p>
+                            <p class='ellipsis text-font-size'>
+                                Signature: <span class="text-muted">{{pTransaction.signature}}</span>
+                            </p>
+                        </div>
+                        <div class="card-footer text-right">
+                            <div *ngIf="pTransaction.isMining"
+                                class="spinner-border spinner-border-sm text-success spinner-style">
+                            </div>
+
+                            <button type="submit" class="btn btn-success"
+                                (click)="minePendingTransactions(pTransaction)" [disabled]="pTransaction.isMining">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-minecart-loaded" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM.115 3.18A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 14 12H2a.5.5 0 0 1-.491-.408l-1.5-8a.5.5 0 0 1 .106-.411zm.987.82 1.313 7h11.17l1.313-7H1.102z" />
+                                    <path fill-rule="evenodd"
+                                        d="M6 1a2.498 2.498 0 0 1 4 0c.818 0 1.545.394 2 1 .67 0 1.552.57 2 1h-2c-.314 0-.611-.15-.8-.4-.274-.365-.71-.6-1.2-.6-.314 0-.611-.15-.8-.4a1.497 1.497 0 0 0-2.4 0c-.189.25-.486.4-.8.4-.507 0-.955.251-1.228.638-.09.13-.194.25-.308.362H3c.13-.147.401-.432.562-.545a1.63 1.63 0 0 0 .393-.393A2.498 2.498 0 0 1 6 1z" />
+                                </svg>
+                                Start Mining
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <form class="custom-card-footer-css">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Mining Logs...</label>
+                        <textarea class="form-control custom-card-footer-textarea" rows="12"
+                            id="exampleFormControlTextarea1" rows="3" disabled name="miningLogs"
+                            [(ngModel)]="blockChain.miningMessage"
+                            placeholder="Mining logs are logged here once the mining is started..."></textarea>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

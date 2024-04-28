@@ -1,0 +1,48 @@
+<app-view-block-details [viewedBlock]="viewedBlock" [viewedBlockBackup]="viewedBlockBackup"
+    (tamperedBlock)="updateTamperedBlockDetails($event)">
+</app-view-block-details>
+
+<div class="row">
+    <div class="col-lg-4" *ngFor="let block of blockChain.chain; let i = index">
+        <div class="card">
+            <div class="card-header">
+                <p class="custom-card-header" *ngIf="i == 0">
+                    <span>Block {{i+1}} (Genesis Block)</span>
+                </p>
+                <p class="custom-card-header" *ngIf="i != 0">
+                    <span>Block {{i+1}}</span>
+                </p>
+            </div>
+            <div class="card-body">
+                <p class='ellipsis text-font-size custom-card-body-text-css'>
+                    Hash: <span class="text-muted">{{block.hash}}</span>
+                </p>
+                <p class='ellipsis text-font-size custom-card-body-text-css'>
+                    Hash of previous block: <span class="text-muted">{{block.previousHash}}</span>
+                </p>
+                <p class='ellipsis text-font-size custom-card-body-text-css'>
+                    Amount:
+                    <span class="text-muted">{{block.transaction.amountTransferred}}₿</span>
+                    <span class="text-muted" *ngIf="block.transaction.isRewardedTrans"> (Rewarded)</span>
+                </p>
+                <p class='ellipsis text-font-size custom-card-body-text-css'>
+                    Nonce: <span class="text-muted">{{block.nonce}}</span>
+                </p>
+                <p class='ellipsis text-font-size custom-card-body-text-css'>
+                    Time Stamp: <span class="text-muted">{{block.timeStamp | date:'d/M/yy, h:mm:ss a'}}</span>
+                </p>
+            </div>
+            <div class="card-footer text-left">
+                <button type="submit" class="btn btn-info" (click)="viewBlockDetails(block)" [disabled]="i == 0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-view-stacked" viewBox="0 0 16 16">
+                        <path
+                            d="M3 0h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3zm0 8h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3z" />
+                    </svg>
+                    View Block Details
+                </button>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>

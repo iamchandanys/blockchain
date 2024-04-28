@@ -1,0 +1,22 @@
+[
+  {
+    "heading": "Technology",
+    "known": "Javascript, Angular, React, .Net Core, Node JS"
+  },
+  {
+    "heading": "Database",
+    "known": "MS SQL, Cosmos DB"
+  },
+  {
+    "heading": "Mobile",
+    "known": "Xamarin Forms (Android & iOS)"
+  },
+  {
+    "heading": "Cloud",
+    "known": "Azure"
+  },
+  {
+    "heading": "Styles",
+    "known": "Angular Material, Bootstrap, Kendo UI, MUI"
+  }
+]

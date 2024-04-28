@@ -1,0 +1,205 @@
+<!-- For greater than medium screen -->
+
+<div
+  data-aos="fade-up"
+  data-aos-duration="600"
+  data-aos-delay="600"
+  data-aos-easing="ease-in-sine"
+  data-aos-anchor-placement="top-bottom"
+  data-aos-once="true"
+  class="d-none d-md-block"
+>
+  <p class="heading-font-size space-bw-heading-and-body">
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 16 16"
+      class="bi bi-folder"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.828 4a3 3 0 0 1-2.12-.879l-.83-.828A1 1 0 0 0 6.173 2H2.5a1 1 0 0 0-1 .981L1.546 4h-1L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3v1z"
+      />
+      <path
+        fill-rule="evenodd"
+        d="M13.81 4H2.19a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zM2.19 3A2 2 0 0 0 .198 5.181l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H2.19z"
+      />
+    </svg>
+    &nbsp; Technologies which I've Worked
+  </p>
+
+  <div class="row" style="margin-bottom: 6%; margin-top: 6%">
+    <div class="col-md-6 vertical-container">
+      <div class="row">
+        <div class="col-12 vertical-center" style="padding: 10%">
+          <img
+            src="../assets/images/Templates/languages_know_template.png"
+            style="height: auto; width: inherit"
+          />
+          <div style="text-align: center">
+            <small class="sub-text-font-size">
+              <a
+                class="text-muted"
+                style="text-decoration: none; font-size: 10px"
+                href="https://pngtree.com/freepng/programmers-code-the-website-from-the-command-line-flat-vector-illustration_4157704.html"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="currentColor"
+                  class="bi bi-link-45deg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+                  />
+                  <path
+                    d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+                  />
+                </svg>
+                PC: pngtree.com
+              </a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div *ngFor="let lang of langKnown">
+        <p class="sub-heading-font-size">
+          {{ lang.heading }}
+          <br />
+          <small
+            class="sub-text-font-size text-muted the-list-style the-sub-list-style"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="{{ lang.known }}"
+            >{{ lang.known }}</small
+          >
+        </p>
+      </div>
+
+      &nbsp;
+
+      <div>
+        <div *ngFor="let e of langKnownOthers">
+          <div class="the-list-style">
+            <span class="text-font-size"> {{ e.heading }}: </span>
+            <span>
+              <small
+                class="text-muted sub-text-font-size the-sub-list-style"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="{{ e.theList }}"
+              >
+                {{ e.theList }}
+              </small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <br />
+</div>
+
+<!-- For Lesser than medium screen -->
+
+<div
+  data-aos="fade-up"
+  data-aos-duration="600"
+  data-aos-delay="600"
+  data-aos-easing="ease-in-sine"
+  data-aos-anchor-placement="top-bottom"
+  data-aos-once="true"
+  class="d-block d-md-none"
+>
+  <p class="heading-font-size">
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 16 16"
+      class="bi bi-folder"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.828 4a3 3 0 0 1-2.12-.879l-.83-.828A1 1 0 0 0 6.173 2H2.5a1 1 0 0 0-1 .981L1.546 4h-1L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3v1z"
+      />
+      <path
+        fill-rule="evenodd"
+        d="M13.81 4H2.19a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zM2.19 3A2 2 0 0 0 .198 5.181l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H2.19z"
+      />
+    </svg>
+    &nbsp; Technologies which I've Worked
+  </p>
+
+  <div class="card" style="padding: 10px; border: none">
+    <div class="row">
+      <div class="col-12">
+        <img
+          src="../assets/images/Templates/languages_know_template.png"
+          style="height: auto; width: inherit"
+        />
+
+        <div style="text-align: center">
+          <small class="sub-text-font-size">
+            <a
+              class="text-muted"
+              style="text-decoration: none; font-size: 10px"
+              href="https://pngtree.com/freepng/programmers-code-the-website-from-the-command-line-flat-vector-illustration_4157704.html"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                class="bi bi-link-45deg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+                />
+                <path
+                  d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+                />
+              </svg>
+              PC: pngtree.com
+            </a>
+          </small>
+        </div>
+      </div>
+    </div>
+
+    &nbsp;
+
+    <div *ngFor="let lang of langKnown">
+      <p class="sub-heading-font-size">
+        {{ lang.heading }}
+        <br />
+        <small class="sub-text-font-size text-muted">{{ lang.known }}</small>
+      </p>
+    </div>
+
+    &nbsp;
+
+    <div *ngFor="let e of langKnownOthers">
+      <p class="sub-heading-font-size">
+        {{ e.heading }}
+        <br />
+        <small class="sub-text-font-size text-muted">{{ e.theList }}</small>
+      </p>
+    </div>
+  </div>
+
+  <br />
+  <hr />
+  <br />
+</div>

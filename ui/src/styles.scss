@@ -1,0 +1,93 @@
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136,
+  "success": #209f7f,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~aos/dist/aos.css";
+
+//START :: Font Family Config
+
+@font-face {
+  font-family: poppins;
+  src: url(assets/font/Poppins-Medium.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: poppins-regular;
+  src: url(assets/font/Poppins-Regular.ttf) format("opentype");
+}
+
+* {
+  font-family: poppins !important;
+}
+
+.regular-ff {
+  font-family: poppins-regular !important;
+}
+
+//END :: Font Family Config
+
+//START :: Font Sizes
+
+.heading-font-size {
+  font-size: 18px;
+}
+
+.sub-heading-font-size {
+  font-size: 16px;
+}
+
+.text-font-size {
+  font-size: 14px;
+}
+
+.sub-text-font-size {
+  font-size: 12px;
+}
+
+//END :: Font Sizes
+
+//START :: Font Color
+
+.font-color-ash {
+  color: #6c757d;
+}
+
+//END :: Font Color
+
+//START :: Common
+
+.space-bw-heading-and-body {
+  margin-bottom: 25px;
+}
+
+//END :: Common
+
+//START :: Align Images Vertically Center
+
+.vertical-container {
+  height: auto;
+  position: relative;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+//END :: Align Images Vertically Center
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
